@@ -1,0 +1,4 @@
+mila posicion: 3juan posicion: 1Ana posicion: 2mila posicion: 3Luis posicion: 1
+juan posicion: 2
+Pedro posicion: 3
+

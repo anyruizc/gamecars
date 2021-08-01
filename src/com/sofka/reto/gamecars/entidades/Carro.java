@@ -37,14 +37,14 @@ public class Carro implements IVehiculo{
     @Override
     public void avanzar() {
         if(this.enCarrera){
-            System.out.println(conductor.getNombre()+ " Presione Enter para lanzar los dados");
+            System.out.println(conductor.getNombre()+ " Presione cualquier letra + Enter para lanzar los dados");
             try {
                 Scanner in = new Scanner(System.in);
                 String enter = in.next();
                 Random random = new Random();
                 int numero = random.nextInt(6)+1;
                 numero = numero * 100;
-                System.out.println(conductor.getNombre() +" Ha avanzado "+numero);
+                System.out.println(conductor.getNombre() +" Ha avanzado "+numero +" en metros");
 
                 this.recorrido = this.recorrido + numero;
             }catch (InputMismatchException e){

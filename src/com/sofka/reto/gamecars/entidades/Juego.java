@@ -1,5 +1,7 @@
 package com.sofka.reto.gamecars.entidades;
 
+import com.sofka.reto.gamecars.repositorios.ArchivoRepositorio;
+
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.List;
@@ -8,6 +10,7 @@ import java.util.Scanner;
 public class Juego {
     private Pista pista;
     private List<Carro> ganadores;
+    private ArchivoRepositorio repositorio = new ArchivoRepositorio();
 
     public Juego() {}
 
@@ -60,6 +63,7 @@ public class Juego {
                 if (carril.getCarro().getRecorrido() / 1000 >= this.pista.getDistancia()){
                     carril.getCarro().setEnCarrera(false);
                     ganadores.add(carril.getCarro());
+                    repositorio.guardar(carril.getCarro(), Integer.toString(ganadores.size()));
                     if(ganadores.size() == 3){
                         finDelJuego = true;
                         break;
